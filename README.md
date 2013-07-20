@@ -1,4 +1,5 @@
-# omrails
+# Ruby on Rails Sample App
 
-This is my first sample Ruby application.
-Let's get this started!
+This is my first Ruby application.
+
+I'm psyched, so let's get this started!
