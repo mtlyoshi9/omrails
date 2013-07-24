@@ -1,14 +1,19 @@
-<div class="hero-unit">
-	<h1>Welcome!</h1>
-	<p>
-		You've found the homepage for my introductory project in Ruby. We're still under construction, so please check back later!
-	</p>
-	<p>
-		If you want to learn more about Ruby or get started on your own project, check out the 
-		<%= link_to "Ruby on Rails homepage", "http://rubyonrails.org/"%>.
-	</p>
-		<%= link_to "Sign Up Now!", '#', class: "btn btn-success"%>
-</div>
-	<h5>
-		I also highly recommend Mattan Griffel's <%= link_to "One Month Rails program", "http://onemonthrails.com"%>; it's how I'm learning and it's been a really great tool for me in picking up this great skill!
-	</h5>
+<% if user_signed_in? %>
+	<h1>You're logged in!</h1>
+
+<% else %>
+	<div class="hero-unit">
+		<h1>Welcome!</h1>
+		<p>
+			You've found the homepage for my introductory project in Ruby. We're still under construction, so please check back later!
+		</p>
+		<p>
+			If you want to learn more about Ruby or get started on your own project, check out the 
+			<%= link_to "Ruby on Rails homepage", "http://rubyonrails.org/"%>.
+		</p>
+			<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-success"%>
+	</div>
+		<h5>
+			I also highly recommend Mattan Griffel's <%= link_to "One Month Rails program", "http://onemonthrails.com"%>; it's how I'm learning and it's been a really great tool for me in picking up this great skill!
+		</h5>
+<% end %>
