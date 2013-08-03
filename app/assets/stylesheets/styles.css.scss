@@ -3,16 +3,11 @@ $baseFontFamily: Oxygen;
 @import url(http://fonts.googleapis.com/css?family=Oxygen);*/
 
 @import 'bootstrap';
-@import 'bootstrap-responsive';
-@media (max-width: 979px) {
-	body {
-		padding-top: 0px;
-	}
+body {
+	padding-top: 60px;
 }
 
-body {
-	padding-top: 55px;
-}
+@import 'bootstrap-responsive';
 
 .footer {
 	color: $grayLight;
