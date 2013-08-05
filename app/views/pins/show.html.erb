@@ -4,10 +4,12 @@
 			<p>
 	  		<b><%= @pin.description %></b>
 			</p>
-		</div>	
+		</div>
+		<% if current_user == @pin.user %>
+			<%= link_to 'Edit', edit_pin_path(@pin) %>
+		<% end %>	
 	</div>
 </div>
-
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
+<br><br>
+<small>Created on <%= @pin.created_at %> by <%= @pin.user.name %></small><br>
 <%= link_to 'Back', pins_path %>
