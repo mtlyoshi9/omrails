@@ -1,15 +1,15 @@
 <div class="row">
 	<div class="span6 offset2">
 		<div class="well">
+			<%= image_tag @pin.image %>
 			<p>
-	  		<b><%= @pin.description %></b>
+	  		<b><%= @pin.description %></b><br><br>
+	  		<small>Created by <%= @pin.user.name %></small>
+	  		<% if current_user == @pin.user %>
+					<br><%= link_to 'Edit', edit_pin_path(@pin) %>
+				<% end %>	
 			</p>
 		</div>
-		<% if current_user == @pin.user %>
-			<%= link_to 'Edit', edit_pin_path(@pin) %>
-		<% end %>	
 	</div>
 </div>
-<br><br>
-<small>Created on <%= @pin.created_at %> by <%= @pin.user.name %></small><br>
 <%= link_to 'Back', pins_path %>
