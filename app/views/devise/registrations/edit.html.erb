@@ -5,6 +5,8 @@
 
   <%= f.input :name %>
   <%= f.input :email %>
+  <%= f.input :about, label: "About Me", as: :text, input_html: { rows: "5"} %>
+
 
   <h4>Change Password</h4>
   <%= f.input :password, label: "New Password", autocomplete: "off" %>
