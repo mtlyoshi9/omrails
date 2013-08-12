@@ -3,8 +3,9 @@
 		<div class="well">
 			<%= image_tag @pin.image %>
 			<p>
-	  		<b><%= @pin.description %></b><br><br>
-	  		<small>Created by <%= @pin.user.name %></small>
+	  		<big><%= @pin.description %></big>
+	  		<br><br>
+	  		<b><small>Created by <%= link_to @pin.user.name, @pin.user %></small></b>
 	  		<% if current_user == @pin.user %>
 					<br><%= link_to 'Edit', edit_pin_path(@pin) %>
 				<% end %>	
