@@ -6,11 +6,13 @@
 	  		<big><%= @pin.description %></big>
 	  		<br><br>
 	  		<b><small>Created by <%= link_to @pin.user.name, @pin.user %></small></b>
-	  		<% if current_user == @pin.user %>
-					<br><%= link_to 'Edit', edit_pin_path(@pin) %>
-				<% end %>	
 			</p>
 		</div>
+	  
+	  <% if current_user == @pin.user %>
+			<b><%= link_to 'Edit', edit_pin_path(@pin) %> |
+			<%= link_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %></b>
+		<% end %>	
 	</div>
 </div>
-<%= link_to 'Back', pins_path %>
+<br><%= link_to 'Back', pins_path %>
